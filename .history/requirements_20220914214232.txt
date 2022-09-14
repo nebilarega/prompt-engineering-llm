@@ -1,2 +1,0 @@
-cohere
-python-dotenv
