@@ -1,4 +1,3 @@
-from cmd import PROMPT
 import cohere
 from dotenv import dotenv_values
 
