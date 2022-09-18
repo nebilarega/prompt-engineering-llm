@@ -6,7 +6,7 @@ import requests
 config = dotenv_values(".env")  
 co = cohere.Client(config['API_KEY'])
 
-class cohereExtractor():
+class CohereExtractor():
     def __init__(self, examples, example_labels, labels, task_desciption, example_prompt):
         self.examples = examples
         self.example_labels = example_labels
@@ -45,7 +45,7 @@ def get_post_titles(**kwargs):
     request = requests.get(base_url, params=payload)
     return [a['title'] for a in request.json()['data']]
 
-cohereMovieExtractor = cohereExtractor([e[1] for e in movie_examples], 
+cohereMovieExtractor = CohereExtractor([e[1] for e in movie_examples], 
                                        [e[0] for e in movie_examples], [],
                                        "", 
                                        "extract the movie title from the post:")
